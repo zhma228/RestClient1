@@ -21,6 +21,8 @@ namespace RestClient
         {
             HttpClient client = new HttpClient();
             var task = Task.Run(() => client.GetAsync("http://localhost:(порт из адр стр)/Cars"));
+
+
             task.Wait();
             HttpResponseMessage response = task.Result;
             string p = response.Content.ReadAsStringAsync().Result;
